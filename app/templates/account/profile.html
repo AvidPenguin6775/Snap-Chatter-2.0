@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+    {% block main %}
+    <link rel="stylesheet" href="static/css/style.css">
+    <section id="layout-content">
+        <div id=profile class="text-center">
+            <div class="container-fluid">
+                <div class="row" >
+                    <div class="col-6 offset-md-3" id="regform">
+                    <h1 class="mb-3 font-weight">Profile</h1>
+                    <!-- Registration -->
+                    <form method="POST" action="/profile" enctype="multipart/form-data">
+                    <!-- Registration -->
+                    <input type="email" name="email" placeholder="Email"><br>
+                    <input type="text" name="username" placeholder="Username"><br>
+                    <input type="text" name="firstname" placeholder="First Name"><br>
+                    <input type="text" name="lastname" placeholder="Last Name">
+                    <div id="avatar">
+                        <img src="{{ session['user']['avatar'] }}" alt="Your Profile Image">
+                    </div>
+                    <input type="file" name="avatar"><br>
+                    <input type="password" name="password" placeholder="Password"><br>
+                    <input type="password" name="password_confirm" placeholder="Confirm Password"><br>
+                    <input type="submit" id="Save" value="Save"><br>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}

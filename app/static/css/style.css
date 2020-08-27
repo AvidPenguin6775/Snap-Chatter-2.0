@@ -1,0 +1,36 @@
+#error404{
+    background: url(../img/error404.jpg) no-repeat right center; 
+    height: calc(100vh - 56px); 
+    display: block;
+    position: relative;
+    background-size: 600px 600px;
+}
+#error404 h1{
+    font-size: 8rem;
+    margin-top: 2rem;
+}
+.navlink i{
+    margin-right: 10px;
+}
+
+.navbarDropdown {
+    color: white;
+}
+
+.dropdown-content:hover {background-color: #ddd}
+
+.dropdown-menu bg-dark {background-color: #ddd}
+
+#regform input { 
+    width: 300px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#regform {
+    margin-top: 10%;
+}
+#Signup {
+    margin-top: 15px;
+}

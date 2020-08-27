@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block main %}
+<link rel="stylesheet" href="static/css/style.css">
+<section id="layout-content">
+    <div id=register class="text-center">
+        <div class="container-fluid">
+            <div class="row" >
+                <div class="col-6 offset-md-3" id="regform">
+                <h1 class="mb-3 font-weight">Register</h1>
+                <!-- Registration -->
+                <form method="POST" action="/register">
+                    {% with messages = get_flashed_messages() %}
+	                {% if messages %}
+		            {% for message in messages %}
+		            <p>{{ message }}</p>
+		            {% endfor %}
+	                {% endif %}
+                    {% endwith %}
+                    <!-- Registration -->
+                    <input type="email" name="email" placeholder="Email"><br>
+                    <input type="password" name="password" placeholder="Password"><br>
+                    <input type="password" name="password_confirm" placeholder="Confirm Password"><br>
+                    <input type="submit" id="Signup" value="Sign Up"><br>
+                </form>
+                <a href="/login">Already have an Account? Sign In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
