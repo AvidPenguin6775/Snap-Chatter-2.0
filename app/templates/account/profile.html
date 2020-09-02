@@ -12,8 +12,8 @@
                     <!-- Registration -->
                     <input type="email" name="email" placeholder="Email"><br>
                     <input type="text" name="username" placeholder="Username"><br>
-                    <input type="text" name="firstname" placeholder="First Name"><br>
-                    <input type="text" name="lastname" placeholder="Last Name">
+                    <input type="text" name="firstname" value="{{session['user']['first_name']}}" placeholder="First Name"><br>
+                    <input type="text" name="lastname" value="{{session['user']['last_name']}}" placeholder="Last Name">
                     <div id="avatar">
                         <img src="{{ session['user']['avatar'] }}" alt="Your Profile Image">
                     </div>
