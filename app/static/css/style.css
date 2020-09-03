@@ -22,51 +22,59 @@
 .dropdown-menu bg-dark {background-color: #ddd}
 
 #regform-register input { 
-    width: 300px;
+    min-width: 120px;
+    width: 80%;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 #regform-login input { 
-    width: 300px;
+    min-width: 120px;
+    width: 80%;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 #regform-profile input { 
-    width: 300px;
+    min-width: 120px;
+    width: 80%;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 #regform-register {
-    margin-top: 14%;
+    margin-top: 45%;
     background-color: white;
     border-radius: 20px;
     padding: 15px;
     height: 350px;
-    width: 100px;
+    width: 100%;
 }
 
 #regform-login {
-    margin-top: 16%;
+    margin-top: 50%;
     background-color: white;
     border-radius: 20px;
     padding: 15px;
     height: 300px;
-    width: 100px;
+    width: 100%;
 }
 
 #regform-profile {
-    margin-top: 10%;
+    margin-top: 30%;
     background-color: white;
     border-radius: 20px;
     padding: 15px;
-    height: 550px;
-    width: 100px;
+    height: calc(600px+img hieght);
+    width: 100%;
+}
+
+#avatar {
+    width: 300px;
+    height: auto;
 }
 
 #Signup {
@@ -81,10 +89,6 @@
     margin-top: 15px;
 }
 
-#login_register {
-    margin-top: 10px;
-}
-
 body {
     background-image: url(../img/view.jpg); 
     background-color: #21062f; /* Used if the image is unavailable */
@@ -93,4 +97,3 @@ body {
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
 }
-
