@@ -21,16 +21,54 @@
 
 .dropdown-menu bg-dark {background-color: #ddd}
 
-#regform input { 
+#regform-register input { 
     width: 300px;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-#regform {
-    margin-top: 10%;
+#regform-login input { 
+    width: 300px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+
+#regform-profile input { 
+    width: 300px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#regform-register {
+    margin-top: 14%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    height: 350px;
+    width: 100px;
+}
+
+#regform-login {
+    margin-top: 16%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    height: 300px;
+    width: 100px;
+}
+
+#regform-profile {
+    margin-top: 10%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    height: 550px;
+    width: 100px;
+}
+
 #Signup {
     margin-top: 15px;
 }
@@ -43,7 +81,16 @@
     margin-top: 15px;
 }
 
-#login {
-    background: url(../img/orange.jpg); 
+#login_register {
+    margin-top: 10px;
+}
+
+body {
+    background-image: url(../img/view.jpg); 
+    background-color: #21062f; /* Used if the image is unavailable */
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
 
