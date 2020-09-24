@@ -72,4 +72,4 @@ def profile():
 def logout():
     account = Account()
     account.logout()
-    return redirect(url_for['home.index'])
+    return redirect(url_for('home.index'))

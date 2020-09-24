@@ -8,6 +8,7 @@
 #error404 h1{
     font-size: 8rem;
     margin-top: 2rem;
+    color: white;
 }
 .navlink i{
     margin-right: 10px;
@@ -45,6 +46,14 @@
     padding-bottom: 10px;
 }
 
+#regform-upload input { 
+    min-width: 120px;
+    width: 80%;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 #regform-register {
     margin-top: 45%;
     background-color: white;
@@ -72,6 +81,15 @@
     width: 100%;
 }
 
+#regform-upload {
+    margin-top: 30%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    height: 625px;
+    width: 100%;
+}
+
 #avatar {
     width: 300px;
     height: auto;
@@ -83,6 +101,7 @@
 
 #Save {
     margin-top: 15px;
+    margin-bottom:15px; 
 }
 
 #Login {
@@ -96,4 +115,70 @@ body {
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
+}
+.grid{
+    margin-left: 15px;
+}
+.grid-item{
+    width: calc(33.33333% - 30px);
+    float: left;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.grid-item img{
+    width: 100%;
+    height: auto;
+}
+
+#images {
+    padding-top: 125px
+}
+
+#images h2 {
+    font-size: 8rem;
+    color: white;
+    margin-bottom: 25px;
+}
+
+#avatar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    width: 33%;
+}
+
+#avatar img{
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 576px) {
+    body{
+        margin-top: 100px;
+    }
+}  
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+}
+
+.modal-body img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fa.fa-times { 
+    float:right;
 }
