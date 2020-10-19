@@ -10,6 +10,13 @@
                         <h1 class="mb-3 font-weight">Login</h1>
                         <!-- Login -->
                         <form method="POST" action="/login" enctype="multipart/form-data">
+                            {% with messages = get_flashed_messages() %}
+	                        {% if messages %}
+		                    {% for message in messages %}
+		                    <p>{{ message }}</p>
+		                    {% endfor %}
+	                        {% endif %}
+                            {% endwith %}
                             <!-- Login -->
                             <input type="email" name="email" placeholder="Email"><br>
                             <input type="password" name="password" placeholder="Password"><br>

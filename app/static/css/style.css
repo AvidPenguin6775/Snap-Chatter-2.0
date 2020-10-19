@@ -182,3 +182,23 @@ body {
 .fa.fa-times { 
     float:right;
 }
+
+#image {
+    width: 600px;
+    height: auto;
+}
+
+.dropdown-item {
+    color: #ffffff;
+}
+
+#test{
+    width: calc(33.33333% - 30px);
+    float: left;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.nav-item {
+    color: #ffffff;
+}
