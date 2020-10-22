@@ -22,8 +22,8 @@
 
 .dropdown-menu bg-dark {background-color: #ddd}
 
-#regform-register input { 
-    min-width: 120px;
+#regform-register, #regform-login, #regform-profile, #regform-upload input { 
+    min-width: 120px; 
     width: 80%;
     padding-left: 10px;
     padding-top: 10px;
@@ -201,4 +201,21 @@ body {
 
 .nav-item {
     color: #ffffff;
+}
+
+.nav-link, .navbar-brand {
+    color: #ffffff
+}
+
+.navbar {
+    color: #ffffff;
+    background: #21062f;
+}
+
+#regform-profile input { 
+    min-width: 120px;
+    width: 80%;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
