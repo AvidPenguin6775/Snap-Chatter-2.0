@@ -40,13 +40,16 @@ def login():
     if request.method == 'POST':
         error = None
         try:
+            # Get account singleton and try login
             account = Account()
             user = account.login(request)
         except Exception as err:
+            # Login error to be flashed
             error = err
         if error:
             flash(str(error))
         else:
+            # Login successful so redirect
             flash("Welcome back!")
             return redirect(url_for('account.profile'))
 
@@ -58,10 +61,12 @@ def profile():
     if request.method == 'POST':
         error = None
         try:
+            # Get account singleton and update account infomation request.
             account = Account()
             user = account.update(request)
             flash("Your details have been updated")
         except Exception as err:
+            # Flash Proflie Update Error
             error = err
         if error:
             flash(str(error))
@@ -70,23 +75,27 @@ def profile():
     
 @bp.route('/logout')
 def logout():
+    # Logs out account and redirects to home page.
     account = Account()
     account.logout()
     return redirect(url_for('home.index'))
 
 @bp.route('/like', methods=['GET'])
 def like():
-
+    # Requests Image_Id and sends it to flask and proccess the image to liked status on the account.
     image_id = request.args.get('image_id')
     like = request.args.get('like')
     flask_app.logger.info('## LIKE VAL CT ##')
     flask_app.logger.info(request.args.get('like'))
+    # Pulls like infomation 
     flask_app.logger.info(like)
     response = ''
 
     try:
+        # Pulls account singleton and sends Image Id, Like (True or False), and the request to change the liked status
         account = Account()
         response = account.like(image_id, like, request)
+        # Returns Error as a string
     except Exception as err:
         response = str(err)
     

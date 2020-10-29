@@ -7,11 +7,13 @@ import uuid, time
 
 class Image():
 
+# 
     def __init__(self):
         return None
 
+ # Simple DB Request for images with a limit of 20
     def get_images(self, limit=20):
-        
+        # Inital Variable Values
         error = None
         images = False
 
@@ -26,24 +28,30 @@ class Image():
         if error:
             raise Exception(error)
         else:
+            # Successfully returned pyrebase objects
             return images
-
+    # Gets the images for the catergory that gets passed in.
+    # Limits the results set to 20 images
     def get_category_images(self, category, limit=20):
         
+        # Inital Variable Values
         error = None
         images = False
         
+        #Tries to get the images
         try:
             database = Database()
             images = database.get_category_images(category, limit)
-
+        # Failed to get images raise a exception 
         except Exception as err:
             flask_app.logger.info(err)
             error = err
-
+        # Check if we have an error
         if error:
+            # We have error, pass it back to the controller
             raise Exception(error)
         else:
+            # We have no errors, return images
             return images
 
     def get_image(self, image_id):
@@ -163,6 +171,7 @@ class Image():
 
     def update(self, image_id, request):
         
+
         name            = request.form['name']
         description     = request.form['description']
         category        = request.form['category']

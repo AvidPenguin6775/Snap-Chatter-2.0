@@ -88,6 +88,7 @@ class Database():
             return image.val()
 
     def save_image(self, image_data, image_id):
+        
         try:
             self.db.child("images").child(image_id).set(image_data)
         except Exception as err:

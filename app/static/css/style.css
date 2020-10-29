@@ -212,7 +212,24 @@ body {
     background: #21062f;
 }
 
+#upload input,
 #regform-profile input { 
+    min-width: 120px;
+    width: 80%;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#forms input { 
+    min-width: 120px;
+    width: 80%;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#forms select { 
     min-width: 120px;
     width: 80%;
     padding-left: 10px;
