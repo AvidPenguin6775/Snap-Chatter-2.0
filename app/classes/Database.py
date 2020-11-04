@@ -39,7 +39,7 @@ class Database():
             "USER_DISABLED": "This account has been disabled by an administrator.",
         }
 
-    # Image Requests
+    # Image Request with a image of 20 and if user is logged out
     def get_images(self, limit=20, user_id=False):
         
         try:
@@ -57,7 +57,7 @@ class Database():
             
         except Exception as err:
             self.process_error(err)
-
+    # pulls category specific images with a limit of 20
     def get_category_images(self, category, limit=20):
         try:
             images = self.db.child("images").order_by_child("category").equal_to(category).limit_to_first(limit).get()
@@ -69,15 +69,15 @@ class Database():
             
         except Exception as err:
             self.process_error(err)
-        
+    # pull image_id
     def get_image(self, image_id):
-        
+        #Set inital variables
         error = None
         image = False
         
         try:
             image = self.db.child("images").child(image_id).get()
-
+        # If error is found send to controller
         except Exception as err:
             flask_app.logger.info(err)
             error = err
@@ -85,18 +85,21 @@ class Database():
         if error:
             raise Exception(error)
         else:
+            # Return image.val 
             return image.val()
-
+    # Save image data and id to database
     def save_image(self, image_data, image_id):
         
         try:
             self.db.child("images").child(image_id).set(image_data)
+            # If process error is found send to controller
         except Exception as err:
             self.process_error(err)
-
+    # Deletes image_id from database
     def delete_image(self, image_id):
         try:
             self.db.child("images").child(image_id).remove()
+            # If proccess error is found send to controller
         except Exception as err:
             self.process_error(err)
 
@@ -117,7 +120,7 @@ class Database():
             return user_auth
         except Exception as err:
             self.process_error(err)
-
+    # Login account infomation requests
     def login(self, email, password):
         try:
             user_auth = self.auth.sign_in_with_email_and_password(email, password)
@@ -125,19 +128,19 @@ class Database():
             return user
         except Exception as err:
             self.process_error(err)
-
+    # Update user data
     def update_user(self, user_data):
         try:
             self.db.child("users").child(user_data['localId']).update(user_data)
             return
         except Exception as err:
             self.process_error(err)
- 
+    # If proccess error is found display readable error.
     def process_error(self, error):
         flask_app.logger.info(error)
         readable_error = self.get_readable_error(error)
         raise Exception(readable_error)
-
+    # if readable error is detected display infomation specific to the error.
     def get_readable_error(self, error):
         error_json = error.args[1]
         error_messsage = json.loads(error_json)['error']['message']

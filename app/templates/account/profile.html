@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row" >
                     <div class="col-md-4 offset-md-4 col-sm-6 ofsset-sm-3 col-xs-8 ofsset-xs-2">
-                        <div id="regform-profile">
+                        <div id="regform">
                             <!-- Title of the page. -->
                             <h1 class="mb-3 font-weight">Profile</h1>
                             <!-- Displays Error Message if error is recorded. -->
@@ -21,20 +21,22 @@
                             <!-- Registration -->
                             <form method="POST" action="/profile" enctype="multipart/form-data">
                             <!-- Registration -->
-                            {% if session['user']['avatar'] %} 
-                                <div id="avatar">
-                                    <img src="{{ session['user']['avatar'] }}" alt="Your Profile Image">
-                                </div>
-                            {% endif %}
-                            <div class="form-group">
-                                <input type="file" name="avatar">
-                            </div>
                             <input type="email" name="email" placeholder="Email" value="{{session['user']['email']}}">
                             <input type="text" name="username" placeholder="Username"><br>
                             <input type="text" name="firstname" value="{{session['user']['first_name']}}" placeholder="First Name"><br>
                             <input type="text" name="lastname" value="{{session['user']['last_name']}}" placeholder="Last Name">
                             <input type="password" name="password" placeholder="Password"><br>
                             <input type="password" name="password_confirm" placeholder="Confirm Password"><br>
+                            {% if session['user']['avatar'] %} 
+                                <div id="avatar">
+                                    <center>
+                                    <img src="{{ session['user']['avatar'] }}" alt="Your Profile Image">
+                                    </center>
+                                </div>
+                            {% endif %}
+                            <div class="form-group">
+                                <input type="file" name="avatar">
+                            </div>
                             <input type="submit" id="Save" value="Save"><br>
                             </form>
                         </div>

@@ -62,19 +62,23 @@ class Account():
         else:
             # Return on success
             return
-        
+        # Requests infomation about login infomation from database.
     def login(self, request):
         if request.method == 'POST':
+            # reuqests form infomation for email, and password.
             email = request.form['email']
             password = request.form['password']
 
             error = None
             if not email:
+                # No email gotten in the request, push readable error
                 error = 'An email is required.'
             elif not password:
+                # No password pulled in the request, push readable error
                 error = 'Password is required.'
             else:
                 try:
+                    # Pulls infomation about email and password from database.
                     database = Database()
                     user = database.login(email, password)
                     # TODO Remove for production
@@ -87,25 +91,32 @@ class Account():
             raise Exception(error)
         else:
             return
-        
+        # Requests infomation about firstname and lastname.
     def update(self, request):
         if request.method == 'POST':
+            # request form infomation for firstname, and lastname.
             first_name = request.form['firstname']
             last_name = request.form['lastname']
 
             error = None
             if not first_name:
+                # If error / empty field with the firstname will display readable error
                 error = 'A first name is required.'
             elif not last_name:
+                # If error / empty field with the lastname will display readable error
                 error = 'A last name is required.'
             else:
+                # If avatar is in request files
                 if 'avatar' in request.files:
+                    # Request the avatar files
                     file = request.files['avatar']
                     if file.filename:
+                        # Pulls avatar, user and localid from session data. 
                         uploader = Upload()
                         avatar = uploader.upload(file, session['user']['localId'])
                         session['user']['avatar'] = "/" + avatar.strip("/")
                 try:
+                    # sets session users firstname and lastname to firstname and lastname.
                     session['user']['first_name'] = first_name
                     session['user']['last_name'] = last_name
                     database = Database()
@@ -118,22 +129,28 @@ class Account():
             raise Exception(error)
         else:
             return
-        
+        # Like function code.
     def like(self, image_id, like, request):
                 
         changed = False
+        #Checks in the image like data is true or false 
+        # and displays the approriate heart.
         likes = session['user']['likes']
-
+        #If like = true and the image_id isnt in likes in the database 
+        #add it to database with like being set to true
         if like == 'true':
             if image_id not in likes:
                 likes.append(image_id)
                 changed = True
         else:
+            # If Image_id is in likes, remove image_id from likes.
             if image_id in likes:
                 likes.remove(image_id)
                 changed = True
 
         if changed:
+            # If changed change appearance of the heart on screen 
+            # by pulling the data from the database
             session['user']['likes'] = likes
             database = Database()
             database.update_user(session['user'])
@@ -141,6 +158,7 @@ class Account():
 
         return changed
         
+        # Logsout by unseting the user in the session.
     def logout(self):
         self.user.unset_user()
 

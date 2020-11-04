@@ -8,16 +8,16 @@ $(document).ready(function(){
 	$grid.imagesLoaded().progress( function() {
 		$grid.masonry('layout');
 	});
-
+	// if like heart is clicked 
 	$('i.like').click(function(e) {
 	
 		e.stopPropagation();
 		e.preventDefault();
-	
+		// update variables to change
 		var like = $(this).hasClass('far');
 		var image_id = $(this).data('image');
 	  	var _this = $(this);
-	
+			// runs script to update image like from true to false.
 		  $.getJSON(
 			$SCRIPT_ROOT + '/like', 
 			{
@@ -25,27 +25,29 @@ $(document).ready(function(){
 				image_id: image_id
 			}, 
 			function(result) {
+				// if unliked remove unliked and add liked class
 				if (like) {
 					_this.removeClass('far');
 					_this.addClass('fas');
 				}else {
+				// if liked remove liked and add unliked class
 					_this.removeClass('fas');
 					_this.addClass('far');
 				}
 			}
 		);
 	});
-
+	// Pulls filter data and sets filter variable to image.
 	if ($('#filter-select').length > 0 ) {
 		var filter = $('#filter-select').data('filter');
 		$('#filter-select').val(filter);
 	}
-	
+	// Pulls category data and sets variable to image
 	if ($('#category').length > 0 ) {
 		var category = $('#category').data('category');
 		$('#category').val(category);
 	}
-	
+	// if image figure has changed remove old class and all the new filter.
 	$('#filter-select').change(function(e) {
 		var new_filter = 'filter-' + this.value;
 		$('#image figure').removeClass();

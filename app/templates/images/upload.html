@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block main %}
 <section id="layout-content">
-	<div id="upload" class="text-center">
+	<div class="text-center">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4 offset-md-4 col-sm-6 ofsset-sm-3 col-xs-8 ofsset-xs-2">
-				<form class="form-upload" method="POST" action="/images/upload" enctype=multipart/form-data>
-					<div id="regform-upload">
-					<h1 class="mb-3 font-weight-normal">Image Upload</h1>
+				<form method="POST" action="/images/upload" enctype=multipart/form-data>
+					<div id="regform">
+					<h1>Image Upload</h1>
 					{% with messages = get_flashed_messages() %}
 					{% if messages %}
 					{% for message in messages %}
@@ -15,21 +15,22 @@
 					{% endfor %}
 					{% endif %}
 					{% endwith %}
-					<div class="form-group">
-						<label>Name</label>
-						<input type="text" name="name" class="form-control" required/>
+					<div id="image">
+						<figure class="filter-{{ image.filter }}">
+							<img src="{{ image.upload_location }}" alt="{{ image.description }}" required/>
+						</figure>
 					</div>
-					<div class="form-group">
-						<label>Description</label>
-						<input type="text" name="description" class="form-control" required/>
+					<div>
+						<input type="text" name="name" value="Name" required/>
 					</div>
-					<div class="form-group">
-						<label>Tags - add a comma after each tag.</label>
-						<input type="text" name="tags" class="form-control" required/>
+					<div>
+						<input type="text" name="description" value="Description" required/>
 					</div>
-					<div class="form-group">
-						<label>Categories</label>
-						<select name="category" class="custom-select" required>
+					<div>
+						<input type="text" name="tags" value="Tags" required/>
+					</div>
+					<div>
+						<select name="category" value="Category" required>
 							<option value="abstract">Abstract</option>
 							<option value="animals-wildlife">Animals/Wildlife</option>
 							<option value="the-arts">The Arts</option>
@@ -58,9 +59,8 @@
 							<option value="vintage">Vintage</option>
 						</select>
 					</div>
-					<div class="form-group">
-						<label>Filter</label>
-						<select name="filter" class="custom-select" required>
+					<div>
+						<select name="filter" value="Filter" required>
 							<option value="_1977">1977</option>
 							<option value="aden">Aden</option>
 							<option value="amaro">Amaro</option>
@@ -101,16 +101,8 @@
 							<option value="willow">Willow</option>
 							<option value="xpro2">X-pro II</option>
 						</select>
-					</div>
-					<div class="form-group">
-						<div class="input-group-append">
-							<div class="custom-file">
-							<input type="file" class="custom-file-input" name="image" id="image-upload">
-							<label class="custom-file-label" for="image-upload">Choose file</label>
-							<button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
-							</div>
-						</div>
-					</div>
+						<input type="file"  name="image" id="image-upload">
+						<input type="submit" id="Signup" value="Upload"><br>
 					</div>
 					</div>
 				</form>
