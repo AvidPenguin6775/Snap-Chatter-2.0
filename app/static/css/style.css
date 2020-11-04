@@ -23,7 +23,7 @@
 .dropdown-content:hover {background-color: #ddd}
 
 .dropdown-menu bg-dark {background-color: #ddd}
-
+/* Cosmics of Inputs, Text, and Select Menus */
 #regform input { 
     min-width: 120px;
     width: 80%;
@@ -55,24 +55,11 @@
     margin-top: 20px;
     color: white;
 }
-
+/* Profile Picture */ 
 #avatar img{
     width: 300px;
     height: auto;
     margin-left: 5%;
-}
-
-#Signup {
-    margin-top: 15px;
-}
-
-#Save {
-    margin-top: 15px;
-    margin-bottom:15px; 
-}
-
-#Login {
-    margin-top: 15px;
 }
 
 /* Sets background to image and empty space to color */ 
@@ -151,16 +138,9 @@ body {
     width: 600px;
     height: auto;
 }
-
+/* Navbar Cosmics */ 
 .dropdown-item {
     color: #ffffff;
-}
-
-#test{
-    width: calc(33.33333% - 30px);
-    float: left;
-    margin-bottom: 30px;
-    color: white;
 }
 
 .nav-item {
@@ -174,45 +154,4 @@ body {
 .navbar {
     color: #ffffff;
     background: #21062f;
-}
-
-#upload input,
-#regform-profile input { 
-    min-width: 120px;
-    width: 80%;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-#forms input { 
-    min-width: 120px;
-    width: 80%;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-#regform select { 
-    min-width: 120px;
-    width: 80%;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-#regform input { 
-    min-width: 120px;
-    width: 80%;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.form-group {
-    min-width: 120px;
-    width: 80%;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
