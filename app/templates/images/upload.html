@@ -15,11 +15,6 @@
 					{% endfor %}
 					{% endif %}
 					{% endwith %}
-					<div id="image">
-						<figure class="filter-{{ image.filter }}">
-							<img src="{{ image.upload_location }}" alt="{{ image.description }}" required/>
-						</figure>
-					</div>
 					<div>
 						<input type="text" name="name" value="Name" required/>
 					</div>
@@ -102,7 +97,7 @@
 							<option value="xpro2">X-pro II</option>
 						</select>
 						<input type="file"  name="image" id="image-upload">
-						<input type="submit" id="Signup" value="Upload"><br>
+						<input type="submit" id="Submit" value="Upload"><br>
 					</div>
 					</div>
 				</form>

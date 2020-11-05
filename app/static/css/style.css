@@ -55,6 +55,10 @@
     margin-top: 20px;
     color: white;
 }
+
+#Submit {
+    margin-top: 15px;
+}
 /* Profile Picture */ 
 #avatar img{
     width: 300px;

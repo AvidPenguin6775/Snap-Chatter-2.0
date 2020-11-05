@@ -29,15 +29,13 @@
                             <input type="password" name="password_confirm" placeholder="Confirm Password"><br>
                             {% if session['user']['avatar'] %} 
                                 <div id="avatar">
-                                    <center>
                                     <img src="{{ session['user']['avatar'] }}" alt="Your Profile Image">
-                                    </center>
                                 </div>
                             {% endif %}
                             <div class="form-group">
                                 <input type="file" name="avatar">
                             </div>
-                            <input type="submit" id="Save" value="Save"><br>
+                            <input type="submit" id="Submit" value="Save"><br>
                             </form>
                         </div>
                     </div>
